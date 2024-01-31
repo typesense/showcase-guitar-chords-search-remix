@@ -10,6 +10,8 @@ import {
   json,
   useLoaderData,
 } from '@remix-run/react';
+import appCSS from './app.css';
+
 declare global {
   interface Window {
     ENV: {
@@ -22,6 +24,7 @@ declare global {
 }
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+  { rel: 'stylesheet', href: appCSS },
 ];
 export async function loader() {
   return json({
