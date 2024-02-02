@@ -1,4 +1,15 @@
-import type { MetaFunction } from '@remix-run/node';
+import type { MetaFunction, LinksFunction } from '@remix-run/node';
+import Heading, { links as HeadingStyles } from '../components/Heading/Heading';
+import GuitarChordsSearch, {
+  links as GuitarChordsSearchStyles,
+} from '../components/GuitarSearch/GuitarChordsSearch';
+import indexCSS from '../styles/index.css';
+
+export const links: LinksFunction = () => [
+  ...HeadingStyles(),
+  ...GuitarChordsSearchStyles(),
+  { rel: 'stylesheet', href: indexCSS },
+];
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,8 +24,11 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.8' }}>
-      <h1>Search guitar chords</h1>
-    </div>
+    <main>
+      <Heading />
+      <div id='flex_row'>
+        <GuitarChordsSearch />
+      </div>
+    </main>
   );
 }
