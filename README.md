@@ -19,7 +19,7 @@
 - <a href="https://github.com/typesense/typesense" target="_blank">Typesense</a>
 - Remix
 - Typescript
-- [typesense-instantsearch-adapter](https://github.com/typesense/typesense-instantsearch-adapter) & instantsearch.js
+- [typesense-instantsearch-adapter](https://github.com/typesense/typesense-instantsearch-adapter) & react-instantsearch
 
 All make for a blazingly fast search experience 🔥🔥🔥
 
