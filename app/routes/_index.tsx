@@ -2,7 +2,7 @@ import type { MetaFunction, LinksFunction } from '@remix-run/node';
 import Heading, { links as HeadingStyles } from '../components/Heading/Heading';
 import GuitarChordsSearch, {
   links as GuitarChordsSearchStyles,
-} from '../components/GuitarSearch/GuitarChordsSearch';
+} from '../components/GuitarChordsSearch/GuitarChordsSearch';
 import indexCSS from '../styles/index.css';
 
 export const links: LinksFunction = () => [
