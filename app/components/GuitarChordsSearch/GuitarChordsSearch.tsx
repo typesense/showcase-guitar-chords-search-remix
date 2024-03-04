@@ -8,26 +8,20 @@ import { typesenseInstantsearchAdapter } from '../../utils/typesense';
 import type TypesenseInstantsearchAdapter from 'typesense-instantsearch-adapter';
 import type { LinksFunction } from '@remix-run/node';
 
-//https://remix.run/docs/en/main/guides/migrating-react-router-app#client-only-components
-let isHydrating = true;
-
 export const links: LinksFunction = () => [
   ...HitItemStyles(),
   ...SearchAndFilterStyles(),
 ];
 
 export default function GuitarChordsSearch() {
-  const [isHydrated, setIsHydrated] = useState(!isHydrating);
   const [searchAdapter, setSearchAdapter] =
     useState<TypesenseInstantsearchAdapter>();
 
   useEffect(() => {
     setSearchAdapter(typesenseInstantsearchAdapter());
-    isHydrating = false;
-    setIsHydrated(true);
   }, []);
 
-  if (isHydrated && searchAdapter) {
+  if (searchAdapter) {
     return (
       <InstantSearch
         indexName='guitar-chords'
