@@ -14,7 +14,7 @@ const instrument = {
 export default function DrawChord({ chord }: { chord: _chordPosition }) {
   return (
     <div className='DrawChord'>
-      <Chord.default chord={chord} instrument={instrument} lite={false} />
+      <Chord chord={chord} instrument={instrument} lite={false} />
     </div>
   );
 }

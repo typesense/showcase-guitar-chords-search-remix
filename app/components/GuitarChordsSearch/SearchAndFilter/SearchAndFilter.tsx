@@ -1,8 +1,5 @@
 import { RefinementList } from 'react-instantsearch';
-import type { LinksFunction } from '@remix-run/node';
-import style from './SearchAndFilter.css';
-
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: style }];
+import './SearchAndFilter.css';
 
 export default function SearchAndFilter() {
   return (
