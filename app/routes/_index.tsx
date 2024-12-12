@@ -1,16 +1,11 @@
-import type { MetaFunction, LinksFunction } from '@remix-run/node';
-import Heading, { links as HeadingStyles } from '../components/Heading/Heading';
-import GuitarChordsSearch, {
-  links as GuitarChordsSearchStyles,
-} from '../components/GuitarChordsSearch/GuitarChordsSearch';
-import indexCSS from '../styles/index.css';
+import type { MetaFunction } from '@remix-run/node';
+import Heading from '../components/Heading/Heading';
+import '../styles/index.css';
+import { Suspense, lazy } from 'react';
 
-export const links: LinksFunction = () => [
-  ...HeadingStyles(),
-  ...GuitarChordsSearchStyles(),
-  { rel: 'stylesheet', href: indexCSS },
-];
-
+const GuitarChordsSearch = lazy(
+  () => import('../components/GuitarChordsSearch/GuitarChordsSearch')
+);
 export const meta: MetaFunction = () => {
   return [
     { title: 'Guitar chords search Remix | Typesense' },
@@ -27,7 +22,9 @@ export default function Index() {
     <main>
       <Heading />
       <div id='flex_row'>
-        <GuitarChordsSearch />
+        <Suspense fallback={<p>Loading...</p>}>
+          <GuitarChordsSearch />
+        </Suspense>
       </div>
     </main>
   );

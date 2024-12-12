@@ -1,8 +1,5 @@
 import { GithubIcon, RemixLogo } from '../icons';
-import type { LinksFunction } from '@remix-run/node';
-import style from './Heading.css';
-
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: style }];
+import './Heading.css';
 
 export default function Heading() {
   return (

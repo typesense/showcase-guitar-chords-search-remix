@@ -4,19 +4,18 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev --manual",
+    "dev": "remix vite:dev",
+    "build": "remix vite:build",
+    "start": "remix-serve ./build/server/index.js",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/index.js",
     "typecheck": "tsc",
     "start:typesense": "docker compose up",
     "index:typesense": "npx tsx ./scripts/indexTypesense.ts"
   },
   "dependencies": {
-    "@remix-run/css-bundle": "^2.5.1",
-    "@remix-run/node": "^2.5.1",
-    "@remix-run/react": "^2.5.1",
-    "@remix-run/serve": "^2.5.1",
+    "@remix-run/node": "^2.15.1",
+    "@remix-run/react": "^2.15.1",
+    "@remix-run/serve": "^2.15.1",
     "@tombatossals/react-chords": "^0.2.10",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
@@ -25,7 +24,7 @@
     "typesense-instantsearch-adapter": "^2.7.1"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.5.1",
+    "@remix-run/dev": "^2.15.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
@@ -37,8 +36,9 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "typescript": "^5.1.6",
-    "typesense": "^1.7.2"
+    "typescript": "^5.7.2",
+    "typesense": "^1.7.2",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
     "node": ">=18.0.0"

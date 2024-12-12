@@ -1,9 +1,6 @@
 import { _GuitarChord } from '../../../types/schema';
 import DrawChord from './DrawChord/DrawChord';
-import type { LinksFunction } from '@remix-run/node';
-import style from './HitItem.css';
-
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: style }];
+import './HitItem.css';
 
 export default function HitItem({ hit }: { hit: _GuitarChord }) {
   const chord = hit.positions[0];
